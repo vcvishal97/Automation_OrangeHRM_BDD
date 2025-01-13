@@ -17,7 +17,7 @@ Feature: login feature
     Given user launches the applicatio
     And user enters the credentials "<username>" "<password>"
     When user clicks login button
-    And login should fail
+    Then login should fail
 
     Examples:
       | username | password |

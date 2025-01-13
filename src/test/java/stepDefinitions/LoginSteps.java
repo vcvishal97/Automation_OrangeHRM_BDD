@@ -2,7 +2,6 @@ package stepDefinitions;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -41,12 +40,12 @@ public class LoginSteps {
 
 	@Then("user should be logged in")
 	public void userShouldBeLoggedIn() {
-	    homePage.isUserDropdownPresent();
+	    Assert.assertTrue(homePage.isUserDropdownPresent(), "Couldn't login");
 	}
 
-	@When("login should fail")
+	@Then("login should fail")
 	public void loginShouldFail() {
-		Assert.assertTrue(loginPage.isInvalidCredentialsPresent(), "LOGIN SUCCESSFUL");
+		Assert.assertTrue(loginPage.isInvalidCredentialsPresent(), "Credentials aren't invalid.");
 	}
 	
 	@Then("user should logout")
