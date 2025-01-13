@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions.SnippetType;
 			dryRun = !true,
 			monochrome = true,
 			snippets = SnippetType.CAMELCASE,
-			features = "./src/test/java/features/login.feature",
+			features = "src/test/java/features/",
 			glue = {"stepDefinitions", "hooks"},
 			tags = "@smoke",
 			plugin = {"pretty", "html:cucumberReports/report.html"}

@@ -1,6 +1,8 @@
 package stepDefinitions;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.Assert;
+
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -42,6 +44,11 @@ public class LoginSteps {
 	    homePage.isUserDropdownPresent();
 	}
 
+	@When("login should fail")
+	public void loginShouldFail() {
+		Assert.assertTrue(loginPage.isInvalidCredentialsPresent(), "LOGIN SUCCESSFUL");
+	}
+	
 	@Then("user should logout")
 	public void userShouldLogout() {
 	    homePage.clickUserDropdown();

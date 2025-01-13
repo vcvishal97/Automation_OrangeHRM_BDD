@@ -20,6 +20,13 @@ public class LoginPage {
 	@FindBy(xpath = "//button[contains(normalize-space(),'Login')]")
 	WebElement loginButton;
 	
+	@FindBy(xpath = "//p[contains(normalize-space(),'Invalid credentials')]")
+	WebElement invalidCredentials;
+	
+	public boolean isInvalidCredentialsPresent() {
+		return invalidCredentials.isDisplayed();
+	}
+	
 	public void clickLoginButton() {
 		loginButton.click();
 	}
