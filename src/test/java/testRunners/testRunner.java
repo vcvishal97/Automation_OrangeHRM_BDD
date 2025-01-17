@@ -5,7 +5,7 @@ import io.cucumber.testng.CucumberOptions;
 import io.cucumber.testng.CucumberOptions.SnippetType;
 
 @CucumberOptions(
-			dryRun = true,
+			dryRun = !true,
 			monochrome = true,
 			snippets = SnippetType.CAMELCASE,
 			features = "src/test/java/features/",

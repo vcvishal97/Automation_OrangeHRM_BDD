@@ -15,8 +15,6 @@ Feature:
     Examples: 
       | username | password | usernameToSearch |
       | Admin    | admin123 | Admin            |
-      | Admin    | admin123 | Admin            |
-      | Admin    | admin123 | Admin            |
 
   @smoke
   Scenario Outline: search with invalid users
@@ -31,4 +29,4 @@ Feature:
 
     Examples: 
       | username | password | usernameToSearch |
-      | Admin    | admin123 | Admin            |
+      | Admin    | admin123 | assdasdasd       |

@@ -25,10 +25,10 @@ public class AdminPage {
 	@FindBy(xpath = "//button[@type='submit']")
 	WebElement search;
 	
-	@FindBy(xpath = "//span[contains(normalize-space(),'Record Found')]")
+	@FindBy(xpath = "//span[contains(normalize-space(),') Record')]")
 	WebElement recordsFound;
 	
-	@FindBy(xpath = "//span[contains(normalize-space(),'Records Found')]")
+	@FindBy(xpath = "//span[contains(normalize-space(),'No Records Found')]")
 	WebElement noRecordsFound;
 	
 	public Boolean isNoRecordsFoundPresent() {
