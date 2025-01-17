@@ -31,6 +31,10 @@ public class AdminPage {
 	@FindBy(xpath = "//span[contains(normalize-space(),'Records Found')]")
 	WebElement noRecordsFound;
 	
+	public Boolean isNoRecordsFoundPresent() {
+		return noRecordsFound.isDisplayed();
+	}
+	
 	public Boolean isRecordsFoundPresent() {
 		return recordsFound.isDisplayed();
 	}

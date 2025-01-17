@@ -37,4 +37,10 @@ public class SearchUsersSteps {
 	public void recordShouldAppear() {
 	    Assert.assertTrue(adminPage.isRecordsFoundPresent(), "NO RECORDS FOUND.");
 	}
+	
+	@Then("no record should appear")
+	public void noRecordShouldAppear() {
+		Assert.assertTrue(adminPage.isNoRecordsFoundPresent(), "SEARCHED WITH VALID DATA INSTEAD OF VALID.");
+	}
+
 }
