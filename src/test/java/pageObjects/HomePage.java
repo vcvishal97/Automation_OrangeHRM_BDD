@@ -17,6 +17,13 @@ public class HomePage {
 	@FindBy(xpath = "//a[normalize-space()='Logout']")
 	WebElement logoutButton;
 	
+	@FindBy(xpath = "//a[@class='oxd-main-menu-item']/span[text()='Admin']")
+	WebElement adminButton;
+	
+	public void clickAdminButton() {
+		adminButton.click();
+	}
+	
 	public void clickUserDropdown() {
 		userDropdown.click();
 	}

@@ -23,6 +23,13 @@ public class LoginPage {
 	@FindBy(xpath = "//p[contains(normalize-space(),'Invalid credentials')]")
 	WebElement invalidCredentials;
 	
+	@FindBy(xpath = "//a[@class='oxd-main-menu-item']/span[text()='Admin']")
+	WebElement adminTab;
+	
+	public void clickAdmin() {
+		adminTab.click();
+	}
+	
 	public boolean isInvalidCredentialsPresent() {
 		return invalidCredentials.isDisplayed();
 	}

@@ -22,8 +22,8 @@ public class LoginSteps {
 		homePage = injector.getHomePage();
 	}
 	
-	@Given("user launches the applicatio")
-	public void userLaunchesTheApplicatio() {
+	@Given("user launches the application")
+	public void userLaunchesTheApplication() {
 	    driver.get(URL);
 	}
 

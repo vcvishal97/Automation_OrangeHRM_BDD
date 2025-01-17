@@ -2,7 +2,7 @@ Feature: login feature
 
   @smoke
   Scenario Outline: login should be successful
-    Given user launches the applicatio
+    Given user launches the application
     And user enters the credentials "<username>" "<password>"
     When user clicks login button
     Then user should be logged in
@@ -14,7 +14,7 @@ Feature: login feature
 
   @smoke
   Scenario Outline: login should not be successful
-    Given user launches the applicatio
+    Given user launches the application
     And user enters the credentials "<username>" "<password>"
     When user clicks login button
     Then login should fail
