@@ -3,7 +3,6 @@ package utilities;
 import java.io.FileInputStream;
 import java.util.Properties;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import pageObjects.AdminPage;
 import pageObjects.HomePage;
@@ -11,13 +10,29 @@ import pageObjects.LoginPage;
 
 public class DependencyInjector {
 
-	private WebDriver driver;
 	private LoginPage loginPage;
 	private HomePage homePage;
 	private AdminPage adminPage;
 	private Actions actions;
 	private Properties properties;
 	private String configFilePath = "src/test/resources/config.properties";
+	private BrowserFactory browserFactory;
+	private static ThreadLocal<String> browser = new ThreadLocal<>();
+	private static ThreadLocal<WebDriver> driver = new ThreadLocal<>();
+	
+	public static void setBrowser(String browserName) {
+		browser.set(browserName);
+	}
+	
+	public static String getBrowser() {
+		return browser.get();
+	}
+	
+	public BrowserFactory getBrowserFactory() {
+		if(browserFactory == null)
+			browserFactory = new BrowserFactory();
+		return browserFactory;
+	}
 	
 	public Properties getProperties() {
 		if(properties == null)
@@ -49,9 +64,9 @@ public class DependencyInjector {
 	}
 	
 	public WebDriver getDriver() {
-		if(driver == null)
-			driver = new ChromeDriver();
-		return driver;
+		if(driver.get() == null)
+			driver.set(getBrowserFactory().getDriver(getBrowser()));
+		return driver.get();
 	}
 	
 	public LoginPage getLoginPage() {
@@ -61,9 +76,9 @@ public class DependencyInjector {
 	}
 
 	public void quitDriver() {
-		if(driver != null) {
-			driver.quit();
-			driver = null;
+		if(driver.get() != null) {
+			driver.get().quit();
+			driver.remove();
 		}
 	}
 }

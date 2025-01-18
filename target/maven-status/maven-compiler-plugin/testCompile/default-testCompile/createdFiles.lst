@@ -1,5 +1,5 @@
 stepDefinitions\LoginSteps.class
-pageObjects\LoginPage.class
 testRunners\TestRunner.class
 pageObjects\HomePage.class
+pageObjects\LoginPage.class
 hooks\Hooks.class
