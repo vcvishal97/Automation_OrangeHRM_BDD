@@ -1,5 +1,4 @@
 stepDefinitions\LoginSteps.class
-utilities\DependecyInjector.class
 pageObjects\LoginPage.class
 testRunners\TestRunner.class
 pageObjects\HomePage.class

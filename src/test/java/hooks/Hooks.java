@@ -4,13 +4,13 @@ import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import utilities.DependecyInjector;
+import utilities.DependencyInjector;
 
 public class Hooks {
 
-	private final DependecyInjector injector;
+	private final DependencyInjector injector;
 	
-	public Hooks(DependecyInjector injector) {
+	public Hooks(DependencyInjector injector) {
 		this.injector = injector;
 	}
 	

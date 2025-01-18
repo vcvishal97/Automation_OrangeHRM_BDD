@@ -6,14 +6,14 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.AdminPage;
 import pageObjects.HomePage;
-import utilities.DependecyInjector;
+import utilities.DependencyInjector;
 
 public class SearchUsersSteps {
 
 	private HomePage homepage;
 	private AdminPage adminPage;
 	
-	public SearchUsersSteps(DependecyInjector injector) {
+	public SearchUsersSteps(DependencyInjector injector) {
 		homepage = injector.getHomePage();
 		adminPage = injector.getAdminPage();
 	}
