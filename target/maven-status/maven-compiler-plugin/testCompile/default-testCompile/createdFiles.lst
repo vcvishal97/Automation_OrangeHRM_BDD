@@ -1,6 +1,6 @@
 stepDefinitions\LoginSteps.class
-testRunners\testRunner.class
 utilities\DependecyInjector.class
 pageObjects\LoginPage.class
-hooks\Hooks.class
+testRunners\TestRunner.class
 pageObjects\HomePage.class
+hooks\Hooks.class
